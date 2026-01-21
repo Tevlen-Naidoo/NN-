@@ -1,14 +1,15 @@
 #include <iostream>
+#include <vector>
 
-#include "utilities/tanh.h"
-#include "utilities/sigmoid.h"
-#include "utilities/relu.h"
+#include "utilities/activations.h"
 
-int main () {
-	std::cout << tanh(0.5) << std::endl;
-	std::cout << sigmoid(0.5) << std::endl;
-	std::cout << ReLU(0.5) << std::endl;
-	
-	return 0;
+int main() {
+
+  std::vector<float> input = {0.85, 0.25};
+
+  std::vector<float> weights = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6};
+
+  std::cout << nn::sigmoid(input[0]) << std::endl;
+
+  return 0;
 }
-
