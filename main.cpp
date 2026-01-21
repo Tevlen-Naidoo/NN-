@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "tanh.h"
-#include "sigmoid.h"
-#include "relu.h"
+#include "utilities/tanh.h"
+#include "utilities/sigmoid.h"
+#include "utilities/relu.h"
 
 int main () {
 	std::cout << tanh(0.5) << std::endl;
