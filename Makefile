@@ -1,7 +1,7 @@
 CXX := g++
 CXXFLAGS := -Wall -Wextra -pedantic -std=c++17
 
-SRCS := $(wildcard *.cpp)
+SRCS := $(shell find . -name "*.cpp")
 OBJS := $(SRCS:.cpp=.o)
 
 TARGET := main
