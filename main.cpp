@@ -9,7 +9,9 @@ int main() {
 
   std::vector<float> weights = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6};
 
-  std::cout << nn::sigmoid(input[0]) << std::endl;
+  float res = input[0] * weights[0] + input[1] * weights[3];
+
+  std::cout << nn::sigmoid(res) << std::endl;
 
   return 0;
 }
