@@ -1,17 +1,20 @@
+#include <exception>
 #include <iostream>
 #include <vector>
 
-#include "utilities/activations.h"
+#include "utilities/loader.h"
 
 int main() {
 
-  std::vector<float> input = {0.85, 0.25};
+  try {
+    auto dataset = loadData("MNIST/train-images-idx3-ubyte/train-images-idx3-ubyte",
+                            "MNIST/train-labels-idx1-ubyte/train-labels-idx1-ubyte");
 
-  std::vector<float> weights = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6};
+    std::cout << "Loaded " << dataset.images.size() << " images." << std::endl;
 
-  float res = input[0] * weights[0] + input[1] * weights[3];
-
-  std::cout << nn::sigmoid(res) << std::endl;
+  } catch (const std::exception &exception) {
+    std::cerr << "Error: " << exception.what() << std::endl;
+  }
 
   return 0;
 }
